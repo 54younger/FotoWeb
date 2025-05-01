@@ -22,9 +22,9 @@
         >
           <div className="container mx-auto px-4 py-4 flex justify-between items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <Camera className="h-8 w-8 text-avocado-end" />
+              <img src="/logo_tran.png" alt="Logo" className="h-8 w-8" />
               <span className="text-2xl font-bold font-heading avocado-gradient-text">
-                Avocadofoto
+                Avocado Foto
               </span>
             </Link>
 
