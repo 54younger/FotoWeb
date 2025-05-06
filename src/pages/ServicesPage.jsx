@@ -13,7 +13,7 @@ const servicesData = [
     pricing: 'Packages starting from $250',
     cta: 'Inquire for Graduation',
     imageAlt: 'Happy graduate posing outdoors',
-    imageSrc: '/images/celebrations/celebrations4.jpg.thumb',
+    imageSrc: '/images/celebrations/thumbs/celebrations4.jpg',
   },
   {
     id: 'headshots',
@@ -23,7 +23,7 @@ const servicesData = [
     pricing: 'Sessions starting from $180',
     cta: 'Book Headshot Session',
     imageAlt: 'Professional woman smiling for a headshot',
-    imageSrc: '/images/headshots/headshots3.jpg.thumb',
+    imageSrc: '/images/headshots/thumbs/headshots3.jpg',
   },
   {
     id: 'lifestyle',
@@ -33,7 +33,7 @@ const servicesData = [
     pricing: 'Inquire for custom quote',
     cta: 'Discuss Your Vision',
     imageAlt: 'Couple laughing together in a park',
-    imageSrc: '/images/lifestyle/lifestyle5.jpg.thumb',
+    imageSrc: '/images/lifestyle/thumbs/lifestyle5.jpg',
   },
 ];
 

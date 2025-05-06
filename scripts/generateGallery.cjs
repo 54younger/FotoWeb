@@ -15,7 +15,7 @@ categories.forEach((category) => {
   gallery[category] = files.map((filename, idx) => ({
     id: `${category[0]}${idx + 1}`,
     alt: filename.replace(/\.[^/.]+$/, '').replace(/[-_]/g, ' '),
-    src: `/images/${category}/${filename}`,
+    src: `/images/${category}/thumbs/${filename}`,
     full: `/images/${category}/${filename}`,
   }));
 });
