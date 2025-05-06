@@ -108,9 +108,9 @@
                     className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                   >
                     <option value="" disabled>Select a service...</option>
-                    <option value="Graduation Portraits">Graduation Portraits</option>
+                    <option value="Celebration Photography">Celebration Photography</option>
                     <option value="Professional Headshots">Professional Headshots</option>
-                    <option value="Lifestyle & Creative Portraits">Lifestyle & Creative Portraits</option>
+                    <option value="Creative Lifestyle Shoots">Creative Lifestyle Shoots</option>
                     <option value="Other Inquiry">Other Inquiry</option>
                   </select>
                 </div>
@@ -142,15 +142,15 @@
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-avocado-end" />
-                  <a href="mailto:hello@avocadofoto.com" className="text-gray-700 hover:text-avocado-end transition-colors">hello@avocadofoto.com</a>
+                  <a href="mailto:avokado.fotografi@gmail.com" className="text-gray-700 hover:text-avocado-end transition-colors">avokado.fotografi@gmail.com</a>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-avocado-end" />
-                  <span className="text-gray-700">(555) 123-4567</span> {/* Replace with actual phone */}
+                  <span className="text-gray-700">(+46) 076-970-8693</span> {/* Replace with actual phone */}
                 </div>
                  <div className="flex items-center space-x-3">
                   <MapPin className="h-5 w-5 text-avocado-end" />
-                  <span className="text-gray-700">Based in [Your City/Region]</span> {/* Replace with location */}
+                  <span className="text-gray-700">Based in Uppsala, Sweden</span> {/* Replace with location */}
                 </div>
               </div>
                <div className="mt-8 pt-6 border-t border-gray-200">
