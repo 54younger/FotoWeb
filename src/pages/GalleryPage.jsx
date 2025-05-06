@@ -50,11 +50,16 @@ const GalleryPage = () => {
       </div>
 
       <PhotoProvider>
-        <motion.div
-          layout
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"
-        >
-          <AnimatePresence>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={selectedCategory}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            layout
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"
+          >
             {filteredImages.map((image) => (
               <motion.div
                 key={image.id}
@@ -67,15 +72,15 @@ const GalleryPage = () => {
               >
                 <PhotoView src={image.full}>
                   <img
-                    className="max-w-full max-h-full object-contain cursor-pointer"
+                    className="w-full h-full object-cover object-center cursor-pointer"
                     src={image.src}
                     alt={image.alt}
                   />
                 </PhotoView>
               </motion.div>
             ))}
-          </AnimatePresence>
-        </motion.div>
+          </motion.div>
+        </AnimatePresence>
       </PhotoProvider>
 
       {filteredImages.length === 0 && selectedCategory !== 'all' && (
