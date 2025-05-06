@@ -49,20 +49,20 @@
     const HomePage = () => {
       const services = [
         {
-          title: 'Graduation Portraits',
+          title: 'Celebration Photography',
           description: 'Celebrate your achievement with stunning portraits.',
           icon: <GraduationCap className="h-10 w-10 mb-4 text-avocado-end" />,
           link: '/services#graduation'
         },
         {
           title: 'Professional Headshots',
-          description: 'Elevate your LinkedIn profile and career presence.',
+          description: 'Polished, confident portraits to elevate your LinkedIn and résumé.',
           icon: <Briefcase className="h-10 w-10 mb-4 text-avocado-end" />,
           link: '/services#headshots'
         },
         {
-          title: 'Lifestyle & Creative',
-          description: 'Capture authentic moments and unique personalities.',
+          title: 'Creative Lifestyle Shoots',
+          description: 'Unique, story-driven photoshoots—turn everyday scenes into art.',
           icon: <User className="h-10 w-10 mb-4 text-avocado-end" />,
           link: '/services#lifestyle'
         },
