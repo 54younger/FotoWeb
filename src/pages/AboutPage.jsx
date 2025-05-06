@@ -11,7 +11,7 @@
           transition={{ duration: 0.5 }}
           className="max-w-3xl mx-auto space-y-8"
         >
-          <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">About Avocadofoto</h1>
+          <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">About Avokado foto</h1>
 
           <motion.div
             initial={{ x: -50, opacity: 0 }}
@@ -25,7 +25,7 @@
             <div className="text-center md:text-left">
               <h2 className="text-2xl font-semibold text-gray-700 mb-3">Meet the Photographer</h2>
               <p className="text-gray-600 leading-relaxed">
-                Hi, I'm the eye behind Avocadofoto! My journey into photography started not just with a camera, but with a fascination for stories. Every person, every event, every fleeting moment has a unique narrative waiting to be told visually.
+                Hi, I'm the eye behind Avokado foto! My journey into photography started not just with a camera, but with a fascination for stories. Every person, every event, every fleeting moment has a unique narrative waiting to be told visually.
               </p>
             </div>
           </motion.div>
@@ -48,7 +48,7 @@
               <Lightbulb className="h-6 w-6 text-avocado-end mt-1 flex-shrink-0" />
               <div>
                 <h3 className="font-semibold text-lg mb-1">A Fresh Perspective</h3>
-                <p>The name "Avocadofoto" reflects a commitment to bringing a fresh, vibrant, and natural approach to photography. I strive for clean compositions, beautiful light, and authentic moments, ensuring your photos feel both timeless and modern.</p>
+                <p>The name "Avokado foto" reflects a commitment to bringing a fresh, vibrant, and natural approach to photography. I strive for clean compositions, beautiful light, and authentic moments, ensuring your photos feel both timeless and modern.</p>
               </div>
             </div>
 

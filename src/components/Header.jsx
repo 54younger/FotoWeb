@@ -24,7 +24,7 @@
             <Link to="/" className="flex items-center space-x-2">
               <img src="/logo_tran.png" alt="Logo" className="h-8 w-8" />
               <span className="text-2xl font-bold font-heading avocado-gradient-text">
-                Avocado Foto
+                Avokado Foto
               </span>
             </Link>
 

@@ -45,7 +45,7 @@
                   transition={{ delay: 0.2, duration: 0.6 }}
                   className="text-4xl md:text-6xl font-bold mb-4 text-gray-800 font-heading"
                 >
-                  Avocadofoto
+                  Avokado foto
                 </motion.h1>
                 <motion.p
                   initial={{ y: 20, opacity: 0 }}

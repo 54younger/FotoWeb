@@ -19,7 +19,7 @@
                </a>
             </div>
             <p className="text-sm">
-              &copy; {currentYear} Avocadofoto. All rights reserved.
+              &copy; {currentYear} Avokado foto. All rights reserved.
             </p>
             <p className="text-xs mt-1">Capturing moments with a fresh perspective.</p>
           </div>
