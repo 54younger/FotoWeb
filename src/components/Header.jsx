@@ -45,14 +45,11 @@
             </nav>
 
             <div className="flex items-center space-x-4">
-               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-avocado-end transition-colors">
-                 <Linkedin size={20} />
+               <a href="https://www.instagram.com/avokado.foto/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-avocado-end transition-colors">
+                 <Instagram size={24} />
                </a>
-               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-avocado-end transition-colors">
-                 <Instagram size={20} />
-               </a>
-               <a href="mailto:hello@avocadofoto.com" className="text-gray-500 hover:text-avocado-end transition-colors">
-                 <Mail size={20} />
+               <a href="mailto:avokado.fotografi@gmail.com" className="text-gray-500 hover:text-avocado-end transition-colors">
+                 <Mail size={24} />
                </a>
              </div>
 

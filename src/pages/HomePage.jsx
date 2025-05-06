@@ -5,6 +5,46 @@
     import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
     import { GraduationCap, Briefcase, User } from 'lucide-react';
     import { Link } from 'react-router-dom';
+    import { useKeenSlider } from "keen-slider/react"
+    import "keen-slider/keen-slider.min.css"
+    import { galleryImages } from "@/data/galleryData";
+
+    const KeenSliderSection = () => {
+    const [sliderRef] = useKeenSlider({
+      loop: true,
+      slides: {
+        perView: 4,
+        spacing: 15,
+      },
+    });
+
+    const images = getRandomGalleryImages(4);
+
+    return (
+      <div ref={sliderRef} className="keen-slider rounded-xl overflow-hidden">
+        {images.map((img) => (
+          <motion.div
+            key={img.id}
+            className="keen-slider__slide"
+            whileHover={{ scale: 1.03 }}
+            transition={{ duration: 0.3 }}
+          >
+            <img
+              src={img.src}
+              alt={img.alt}
+              className="w-full h-64 object-contain bg-white rounded-xl shadow-md"
+            />
+          </motion.div>
+        ))}
+      </div>
+    );
+  };
+
+    const getRandomGalleryImages = (n = 4) => {
+      const allImages = Object.values(galleryImages).flat();
+      const shuffled = allImages.sort(() => 0.5 - Math.random());
+      return shuffled.slice(0, n);
+    };
 
     const HomePage = () => {
       const services = [
@@ -97,24 +137,13 @@
 
           {/* Example Gallery Snippet (Optional) */}
           <section className="container mx-auto px-4 text-center">
-             <h2 className="text-3xl font-bold mb-8 text-gray-800">Featured Work</h2>
-             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-                  <img  class="w-full h-48 object-cover rounded-lg shadow-md" alt="Graduation portrait example" src="https://images.unsplash.com/photo-1686213011371-2aff28a08f16" />
-                </motion.div>
-                 <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-                  <img  class="w-full h-48 object-cover rounded-lg shadow-md" alt="Professional headshot example" src="https://images.unsplash.com/photo-1623880840102-7df0a9f3545b" />
-                </motion.div>
-                 <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-                  <img  class="w-full h-48 object-cover rounded-lg shadow-md" alt="Lifestyle portrait example" src="https://images.unsplash.com/photo-1691362189658-64527afc6525" />
-                </motion.div>
-                 <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-                  <img  class="w-full h-48 object-cover rounded-lg shadow-md" alt="Creative portrait example" src="https://images.unsplash.com/photo-1603779969917-2e33328b0834" />
-                </motion.div>
-             </div>
-             <Button asChild variant="outline" className="mt-8 border-avocado-end text-avocado-end hover:bg-avocado-start/10 hover:text-avocado-start">
-                <Link to="/gallery">View Full Gallery</Link>
-             </Button>
+            <h2 className="text-3xl font-bold mb-8 text-gray-800">Featured Work</h2>
+
+            <KeenSliderSection />
+
+            <Button asChild variant="outline" className="mt-8 border-avocado-end text-avocado-end hover:bg-avocado-start/10 hover:text-avocado-start">
+              <Link to="/gallery">View Full Gallery</Link>
+            </Button>
           </section>
 
         </motion.div>
