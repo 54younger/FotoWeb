@@ -13,11 +13,16 @@ function processDir(dir) {
       processDir(filePath);
     } else if (/\.(jpe?g|png)$/i.test(file)) {
       // 只处理原图，跳过已生成的缩略图
-      if (file.startsWith('thumb_')) return;
-      const outPath = path.join(dir, file); // 缩略图与原图同名覆盖
+      if (filePath.includes('/thumbs/') || file.startsWith('thumb_')) return;
+      // 新建 thumbs 子文件夹
+      const thumbsDir = path.join(dir, 'thumbs');
+      if (!fs.existsSync(thumbsDir)) {
+        fs.mkdirSync(thumbsDir);
+      }
+      const outPath = path.join(thumbsDir, file); // 缩略图存放在 thumbs 子文件夹，文件名不变
       sharp(filePath)
         .resize(thumbSize, thumbSize, { fit: 'cover', position: 'center' })
-        .toFile(outPath + '.thumb', err => {
+        .toFile(outPath, err => {
           if (err) console.error('Error:', err);
         });
     }
