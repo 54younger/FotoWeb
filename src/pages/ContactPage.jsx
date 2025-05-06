@@ -8,6 +8,7 @@
     import { useToast } from '@/components/ui/use-toast';
     import { Mail, Phone, MapPin } from 'lucide-react';
     import { useLocation } from 'react-router-dom';
+    import emailjs from 'emailjs-com';
 
     const ContactPage = () => {
       const { toast } = useToast();
@@ -31,46 +32,51 @@
         }));
       };
 
-      const handleSubmit = async (e) => {
+            const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-
-        // Basic validation
+      
         if (!formData.name || !formData.email || !formData.service) {
-           toast({
-             variant: "destructive",
-             title: "Missing Information",
-             description: "Please fill in your name, email, and select a service.",
-           });
-           setIsSubmitting(false);
-           return;
+          toast({
+            variant: "destructive",
+            title: "Missing Information",
+            description: "Please fill in your name, email, and select a service.",
+          });
+          setIsSubmitting(false);
+          return;
         }
-
-        // Simulate form submission (replace with actual API call later)
-        console.log('Form Data Submitted:', formData);
-        // In a real app, you'd send this data to a backend or email service.
-        // For now, we'll just use localStorage to simulate success.
+      
         try {
-           localStorage.setItem('lastBookingInquiry', JSON.stringify(formData));
-           await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate network delay
-
-           toast({
-             title: "Inquiry Sent!",
-             description: "Thank you for reaching out. We'll get back to you soon!",
-           });
-           setFormData({ name: '', email: '', date: '', service: '', message: '' }); // Clear form
+          // 发送邮件
+          await emailjs.send(
+            'service_oe07u7h',      // 替换为你的 Service ID
+            'template_xdfsnlj',     // 替换为你的 Template ID
+            {
+              from_name: formData.name,
+              from_email: formData.email,
+              service: formData.service,
+              date: formData.date,
+              message: formData.message,
+            },
+            '1DF6BDKZ9IIT1n6Q-'       // 替换为你的 Public Key
+          );
+      
+          toast({
+            title: "Inquiry Sent!",
+            description: "Thank you for reaching out. We'll get back to you soon!",
+          });
+          setFormData({ name: '', email: '', date: '', service: '', message: '' });
         } catch (error) {
-           console.error("Submission error:", error);
-           toast({
-             variant: "destructive",
-             title: "Submission Failed",
-             description: "Something went wrong. Please try again later.",
-           });
-        } finally {
-           setIsSubmitting(false);
+          console.error("Submission error:", error);
+            toast({
+              variant: "destructive",
+              title: "Submission Failed",
+              description: error?.text || error?.message || String(error),
+            });
+          } finally {
+            setIsSubmitting(false);
         }
       };
-
 
       return (
         <motion.div
